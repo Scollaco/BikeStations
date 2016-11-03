@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BCFCE3CB061CD0EE820F688 /* Pods_BikeStations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E753722311C542A436BE6 /* Pods_BikeStations.framework */; };
 		BE15F8EF1DCB8C5D00272E22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F8EE1DCB8C5D00272E22 /* AppDelegate.swift */; };
-		BE15F8F11DCB8C5D00272E22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F8F01DCB8C5D00272E22 /* ViewController.swift */; };
+		BE15F8F11DCB8C5D00272E22 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F8F01DCB8C5D00272E22 /* MapViewController.swift */; };
 		BE15F8F41DCB8C5D00272E22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15F8F21DCB8C5D00272E22 /* Main.storyboard */; };
 		BE15F8F71DCB8C5D00272E22 /* BikeStations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE15F8F51DCB8C5D00272E22 /* BikeStations.xcdatamodeld */; };
 		BE15F8F91DCB8C5D00272E22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE15F8F81DCB8C5D00272E22 /* Assets.xcassets */; };
 		BE15F8FC1DCB8C5D00272E22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15F8FA1DCB8C5D00272E22 /* LaunchScreen.storyboard */; };
 		BE15F9071DCB8C5D00272E22 /* BikeStationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9061DCB8C5D00272E22 /* BikeStationsTests.swift */; };
 		BE15F9121DCB8C5D00272E22 /* BikeStationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9111DCB8C5D00272E22 /* BikeStationsUITests.swift */; };
+		BE15F9211DCB8C9D00272E22 /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9201DCB8C9D00272E22 /* BikeStation.swift */; };
+		BE15F9261DCB925800272E22 /* BikeStationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9251DCB925800272E22 /* BikeStationController.swift */; };
+		BE15F92B1DCB97F900272E22 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92A1DCB97F900272E22 /* Constants.swift */; };
+		BE15F92D1DCB9B7100272E22 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92C1DCB9B7100272E22 /* Result.swift */; };
+		BE15F92F1DCB9C9E00272E22 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92E1DCB9C9E00272E22 /* Error.swift */; };
+		BE32B9551DCBA4AE00372398 /* AnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9541DCBA4AE00372398 /* AnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B45635DA2E919EFD9A7070E /* Pods-BikeStations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStations.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeStations/Pods-BikeStations.release.xcconfig"; sourceTree = "<group>"; };
+		965E753722311C542A436BE6 /* Pods_BikeStations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeStations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B08269C392026BDA852AD563 /* Pods-BikeStations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStations.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeStations/Pods-BikeStations.debug.xcconfig"; sourceTree = "<group>"; };
 		BE15F8EB1DCB8C5D00272E22 /* BikeStations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeStations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15F8EE1DCB8C5D00272E22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE15F8F01DCB8C5D00272E22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE15F8F01DCB8C5D00272E22 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BE15F8F31DCB8C5D00272E22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE15F8F61DCB8C5D00272E22 /* BikeStations.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BikeStations.xcdatamodel; sourceTree = "<group>"; };
 		BE15F8F81DCB8C5D00272E22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +59,12 @@
 		BE15F90D1DCB8C5D00272E22 /* BikeStationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeStationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15F9111DCB8C5D00272E22 /* BikeStationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationsUITests.swift; sourceTree = "<group>"; };
 		BE15F9131DCB8C5D00272E22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE15F9201DCB8C9D00272E22 /* BikeStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeStation.swift; path = Modules/Model/BikeStation.swift; sourceTree = "<group>"; };
+		BE15F9251DCB925800272E22 /* BikeStationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeStationController.swift; path = Modules/Controller/BikeStationController.swift; sourceTree = "<group>"; };
+		BE15F92A1DCB97F900272E22 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BE15F92C1DCB9B7100272E22 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		BE15F92E1DCB9C9E00272E22 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		BE32B9541DCBA4AE00372398 /* AnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnotationView.swift; path = Modules/Views/AnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BCFCE3CB061CD0EE820F688 /* Pods_BikeStations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3638DD6A300CC05434E22626 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B08269C392026BDA852AD563 /* Pods-BikeStations.debug.xcconfig */,
+				3B45635DA2E919EFD9A7070E /* Pods-BikeStations.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		90570748D07FB127FED2B84F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				965E753722311C542A436BE6 /* Pods_BikeStations.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BE15F8E21DCB8C5D00272E22 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +117,8 @@
 				BE15F9051DCB8C5D00272E22 /* BikeStationsTests */,
 				BE15F9101DCB8C5D00272E22 /* BikeStationsUITests */,
 				BE15F8EC1DCB8C5D00272E22 /* Products */,
+				3638DD6A300CC05434E22626 /* Pods */,
+				90570748D07FB127FED2B84F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +135,9 @@
 		BE15F8ED1DCB8C5D00272E22 /* BikeStations */ = {
 			isa = PBXGroup;
 			children = (
-				BE15F8EE1DCB8C5D00272E22 /* AppDelegate.swift */,
-				BE15F8F01DCB8C5D00272E22 /* ViewController.swift */,
+				BE15F9291DCB97EC00272E22 /* Helper Classes */,
+				BE15F9281DCB976000272E22 /* AppDegelate */,
+				BE15F91F1DCB8C7B00272E22 /* Modules */,
 				BE15F8F21DCB8C5D00272E22 /* Main.storyboard */,
 				BE15F8F81DCB8C5D00272E22 /* Assets.xcassets */,
 				BE15F8FA1DCB8C5D00272E22 /* LaunchScreen.storyboard */,
@@ -128,6 +165,75 @@
 			path = BikeStationsUITests;
 			sourceTree = "<group>";
 		};
+		BE15F91F1DCB8C7B00272E22 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BE15F9241DCB923400272E22 /* Map */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		BE15F9221DCB8CA200272E22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE15F9201DCB8C9D00272E22 /* BikeStation.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BE15F9231DCB8D2000272E22 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE15F8F01DCB8C5D00272E22 /* MapViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BE15F9241DCB923400272E22 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BE32B9531DCBA48300372398 /* Views */,
+				BE32B9521DCBA10F00372398 /* Client */,
+				BE15F9231DCB8D2000272E22 /* Controller */,
+				BE15F9221DCB8CA200272E22 /* Model */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		BE15F9281DCB976000272E22 /* AppDegelate */ = {
+			isa = PBXGroup;
+			children = (
+				BE15F8EE1DCB8C5D00272E22 /* AppDelegate.swift */,
+			);
+			name = AppDegelate;
+			sourceTree = "<group>";
+		};
+		BE15F9291DCB97EC00272E22 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BE15F92A1DCB97F900272E22 /* Constants.swift */,
+				BE15F92C1DCB9B7100272E22 /* Result.swift */,
+				BE15F92E1DCB9C9E00272E22 /* Error.swift */,
+			);
+			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		BE32B9521DCBA10F00372398 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				BE15F9251DCB925800272E22 /* BikeStationController.swift */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
+		BE32B9531DCBA48300372398 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE32B9541DCBA4AE00372398 /* AnotationView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE15F9161DCB8C5D00272E22 /* Build configuration list for PBXNativeTarget "BikeStations" */;
 			buildPhases = (
+				5E4724BF56D7A5C1839A1C67 /* [CP] Check Pods Manifest.lock */,
 				BE15F8E71DCB8C5D00272E22 /* Sources */,
 				BE15F8E81DCB8C5D00272E22 /* Frameworks */,
 				BE15F8E91DCB8C5D00272E22 /* Resources */,
+				6990988EF612B0454C41CE4A /* [CP] Embed Pods Frameworks */,
+				BFE116AD092C63603F80E388 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,17 +306,20 @@
 					BE15F8EA1DCB8C5D00272E22 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = KZ6MLA9K63;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					BE15F9011DCB8C5D00272E22 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = KZ6MLA9K63;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BE15F8EA1DCB8C5D00272E22;
 					};
 					BE15F90C1DCB8C5D00272E22 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = KZ6MLA9K63;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BE15F8EA1DCB8C5D00272E22;
 					};
@@ -260,14 +372,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5E4724BF56D7A5C1839A1C67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6990988EF612B0454C41CE4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeStations/Pods-BikeStations-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFE116AD092C63603F80E388 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeStations/Pods-BikeStations-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BE15F8E71DCB8C5D00272E22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE15F92F1DCB9C9E00272E22 /* Error.swift in Sources */,
 				BE15F8F71DCB8C5D00272E22 /* BikeStations.xcdatamodeld in Sources */,
-				BE15F8F11DCB8C5D00272E22 /* ViewController.swift in Sources */,
+				BE15F9211DCB8C9D00272E22 /* BikeStation.swift in Sources */,
+				BE15F8F11DCB8C5D00272E22 /* MapViewController.swift in Sources */,
+				BE32B9551DCBA4AE00372398 /* AnotationView.swift in Sources */,
+				BE15F9261DCB925800272E22 /* BikeStationController.swift in Sources */,
+				BE15F92D1DCB9B7100272E22 /* Result.swift in Sources */,
 				BE15F8EF1DCB8C5D00272E22 /* AppDelegate.swift in Sources */,
+				BE15F92B1DCB97F900272E22 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +581,7 @@
 		};
 		BE15F9171DCB8C5D00272E22 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B08269C392026BDA852AD563 /* Pods-BikeStations.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KZ6MLA9K63;
@@ -428,6 +595,7 @@
 		};
 		BE15F9181DCB8C5D00272E22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B45635DA2E919EFD9A7070E /* Pods-BikeStations.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KZ6MLA9K63;
@@ -516,6 +684,7 @@
 				BE15F9181DCB8C5D00272E22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE15F9191DCB8C5D00272E22 /* Build configuration list for PBXNativeTarget "BikeStationsTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +693,7 @@
 				BE15F91B1DCB8C5D00272E22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE15F91C1DCB8C5D00272E22 /* Build configuration list for PBXNativeTarget "BikeStationsUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +702,7 @@
 				BE15F91E1DCB8C5D00272E22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
