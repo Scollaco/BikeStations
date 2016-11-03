@@ -9,23 +9,37 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
 
     let controller = BikeStationController()
     @IBOutlet weak var mapStations: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         controller.getBikeStations { [unowned self] stations, errorMessage in
             
             if stations != nil {
-            
-                self.mapStations.addAnnotation()
-            
+                self.addAnottationsOnMap(stations)
             }
-            
         }
+    }
     
+    fileprivate func addAnottationsOnMap(_ stations : [BikeStation]?) {
+    
+        var annotations : [MKPointAnnotation] = []
+        stations?.forEach({ (station) in
+            
+            let startPoint = MKPointAnnotation.init()
+            startPoint.coordinate = station.coordinate
+            startPoint.title = station.name
+            annotations.append(startPoint)
+        })
+        
+        DispatchQueue.main.async { [unowned self] in
+         self.mapStations.addAnnotations(annotations)
+         self.mapStations.showAnnotations(annotations, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,11 +50,10 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController : MKMapViewDelegate {
-
-    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
-        
-        
-        
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        view.canShowCallout = true
     }
+    
 }
 

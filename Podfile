@@ -5,6 +5,7 @@ use_frameworks!
 
 target :BikeStations do
   pod 'Alamofire', '~> 4.0.0'
+  pod 'MagicalRecord/Shorthand'
 end
 
 post_install do |installer|

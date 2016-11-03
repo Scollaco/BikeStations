@@ -19,9 +19,9 @@
 		BE15F9211DCB8C9D00272E22 /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9201DCB8C9D00272E22 /* BikeStation.swift */; };
 		BE15F9261DCB925800272E22 /* BikeStationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9251DCB925800272E22 /* BikeStationController.swift */; };
 		BE15F92B1DCB97F900272E22 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92A1DCB97F900272E22 /* Constants.swift */; };
-		BE15F92D1DCB9B7100272E22 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92C1DCB9B7100272E22 /* Result.swift */; };
 		BE15F92F1DCB9C9E00272E22 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92E1DCB9C9E00272E22 /* Error.swift */; };
 		BE32B9551DCBA4AE00372398 /* AnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9541DCBA4AE00372398 /* AnotationView.swift */; };
+		BE32B9581DCBC24A00372398 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9571DCBC24A00372398 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,9 +62,9 @@
 		BE15F9201DCB8C9D00272E22 /* BikeStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeStation.swift; path = Modules/Model/BikeStation.swift; sourceTree = "<group>"; };
 		BE15F9251DCB925800272E22 /* BikeStationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeStationController.swift; path = Modules/Controller/BikeStationController.swift; sourceTree = "<group>"; };
 		BE15F92A1DCB97F900272E22 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		BE15F92C1DCB9B7100272E22 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BE15F92E1DCB9C9E00272E22 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		BE32B9541DCBA4AE00372398 /* AnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnotationView.swift; path = Modules/Views/AnotationView.swift; sourceTree = "<group>"; };
+		BE32B9571DCBC24A00372398 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +135,7 @@
 		BE15F8ED1DCB8C5D00272E22 /* BikeStations */ = {
 			isa = PBXGroup;
 			children = (
+				BE32B9561DCBC22200372398 /* Persistence */,
 				BE15F9291DCB97EC00272E22 /* Helper Classes */,
 				BE15F9281DCB976000272E22 /* AppDegelate */,
 				BE15F91F1DCB8C7B00272E22 /* Modules */,
@@ -212,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				BE15F92A1DCB97F900272E22 /* Constants.swift */,
-				BE15F92C1DCB9B7100272E22 /* Result.swift */,
 				BE15F92E1DCB9C9E00272E22 /* Error.swift */,
 			);
 			name = "Helper Classes";
@@ -232,6 +232,14 @@
 				BE32B9541DCBA4AE00372398 /* AnotationView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		BE32B9561DCBC22200372398 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				BE32B9571DCBC24A00372398 /* PersistenceManager.swift */,
+			);
+			name = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,7 +439,7 @@
 				BE15F8F11DCB8C5D00272E22 /* MapViewController.swift in Sources */,
 				BE32B9551DCBA4AE00372398 /* AnotationView.swift in Sources */,
 				BE15F9261DCB925800272E22 /* BikeStationController.swift in Sources */,
-				BE15F92D1DCB9B7100272E22 /* Result.swift in Sources */,
+				BE32B9581DCBC24A00372398 /* PersistenceManager.swift in Sources */,
 				BE15F8EF1DCB8C5D00272E22 /* AppDelegate.swift in Sources */,
 				BE15F92B1DCB97F900272E22 /* Constants.swift in Sources */,
 			);

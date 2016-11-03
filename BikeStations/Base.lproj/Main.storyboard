@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BikeStations" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="BikeStations" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,9 +23,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sYF-CQ-wGe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2v6-bg-aKy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sYF-CQ-wGe" secondAttribute="bottom" id="3qG-vb-GOk"/>
+                            <constraint firstItem="sYF-CQ-wGe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LBQ-e1-7Qd"/>
                             <constraint firstItem="sYF-CQ-wGe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z7l-H1-VQH"/>
-                            <constraint firstAttribute="trailing" secondItem="sYF-CQ-wGe" secondAttribute="trailing" id="iWX-AZ-tJJ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sYF-CQ-wGe" secondAttribute="bottom" id="wC0-hM-R2W"/>
+                            <constraint firstItem="sYF-CQ-wGe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bhU-i9-zOp"/>
+                            <constraint firstAttribute="trailing" secondItem="sYF-CQ-wGe" secondAttribute="trailing" id="giF-FC-hd1"/>
                         </constraints>
                     </view>
                     <connections>
