@@ -9,12 +9,22 @@
 import UIKit
 import CoreLocation
 
-final class BikeStation : NSObject {
+protocol Annotable {
+
+    var stationId : String? { get set }
+    var name : String? { get set }
+    var latitude : Double? { get set }
+    var longitude : Double? { get set }
+}
+
+final class BikeStation : NSObject, Annotable {
     
-    let stationId : String?
-    let name : String?
-    let latitude : Double?
-    let longitude : Double?
+    var stationId : String?
+    var name : String?
+    var latitude : Double?
+    var longitude : Double?
+    let store = BikeStationStore()
+ 
     
     var coordinate : CLLocationCoordinate2D  {
         get {

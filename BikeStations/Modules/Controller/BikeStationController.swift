@@ -31,14 +31,17 @@ class BikeStationController: NSObject, BikeStationClientProtocol {
             
             guard let json = response.result.value as? [String:AnyObject] else {
                 
-                completion(nil, unknownErrorMessage)
+                completion(nil, response.result.error.debugDescription)
                 return
             }
             
             let stations : [Any]? = json["data"]?["stations"] as? [Any]
             
             self.bikeStations = stations!.flatMap({ dictionary  in
-                return BikeStation.init(dictionary: dictionary as! [String : Any])
+                
+                let station = BikeStation.init(dictionary: dictionary as! [String : Any])
+                station.store.saveStationToDataBase(station: station)
+                return station
             })
             
             completion (self.bikeStations, nil)

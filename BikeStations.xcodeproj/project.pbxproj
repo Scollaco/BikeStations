@@ -8,20 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		2BCFCE3CB061CD0EE820F688 /* Pods_BikeStations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E753722311C542A436BE6 /* Pods_BikeStations.framework */; };
+		504DC8F3D786267C27728B2E /* Pods_BikeStationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE2A549F051120EAD9AF7EB /* Pods_BikeStationsTests.framework */; };
 		BE15F8EF1DCB8C5D00272E22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F8EE1DCB8C5D00272E22 /* AppDelegate.swift */; };
 		BE15F8F11DCB8C5D00272E22 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F8F01DCB8C5D00272E22 /* MapViewController.swift */; };
 		BE15F8F41DCB8C5D00272E22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15F8F21DCB8C5D00272E22 /* Main.storyboard */; };
 		BE15F8F71DCB8C5D00272E22 /* BikeStations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE15F8F51DCB8C5D00272E22 /* BikeStations.xcdatamodeld */; };
 		BE15F8F91DCB8C5D00272E22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE15F8F81DCB8C5D00272E22 /* Assets.xcassets */; };
 		BE15F8FC1DCB8C5D00272E22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15F8FA1DCB8C5D00272E22 /* LaunchScreen.storyboard */; };
-		BE15F9071DCB8C5D00272E22 /* BikeStationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9061DCB8C5D00272E22 /* BikeStationsTests.swift */; };
 		BE15F9121DCB8C5D00272E22 /* BikeStationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9111DCB8C5D00272E22 /* BikeStationsUITests.swift */; };
 		BE15F9211DCB8C9D00272E22 /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9201DCB8C9D00272E22 /* BikeStation.swift */; };
 		BE15F9261DCB925800272E22 /* BikeStationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9251DCB925800272E22 /* BikeStationController.swift */; };
 		BE15F92B1DCB97F900272E22 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92A1DCB97F900272E22 /* Constants.swift */; };
 		BE15F92F1DCB9C9E00272E22 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92E1DCB9C9E00272E22 /* Error.swift */; };
-		BE32B9551DCBA4AE00372398 /* AnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9541DCBA4AE00372398 /* AnotationView.swift */; };
-		BE32B9581DCBC24A00372398 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9571DCBC24A00372398 /* PersistenceManager.swift */; };
+		BE32B9551DCBA4AE00372398 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9541DCBA4AE00372398 /* CalloutView.swift */; };
+		BE32B9581DCBC24A00372398 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9571DCBC24A00372398 /* PersistencyManager.swift */; };
+		BE32B95C1DCBD02800372398 /* BikeStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B95B1DCBD02800372398 /* BikeStationStore.swift */; };
+		BE32B9611DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B95F1DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift */; };
+		BE32B9641DCBDC3A00372398 /* TestBikeStationPersistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9631DCBDC3A00372398 /* TestBikeStationPersistency.swift */; };
+		BE32B9651DCBDCAA00372398 /* BikeStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B95B1DCBD02800372398 /* BikeStationStore.swift */; };
+		BE32B9671DCBDCB700372398 /* BikeStationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B95F1DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift */; };
+		BE32B9681DCBDD5100372398 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9571DCBC24A00372398 /* PersistencyManager.swift */; };
+		BE32B9691DCBE16400372398 /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9201DCB8C9D00272E22 /* BikeStation.swift */; };
+		BE32B96B1DCBFD8300372398 /* BikeStationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B96A1DCBFD8300372398 /* BikeStationEntity+CoreDataClass.swift */; };
+		BE32B96D1DCC07E800372398 /* MapViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B96C1DCC07E800372398 /* MapViewHelper.swift */; };
+		BE32B96F1DCC28FC00372398 /* CalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE32B96E1DCC28FC00372398 /* CalloutView.xib */; };
+		BE32B9711DCC301600372398 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9701DCC301600372398 /* AnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DE2A549F051120EAD9AF7EB /* Pods_BikeStationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeStationsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A324F465C05D5C2CC34304E /* Pods-BikeStationsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStationsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeStationsTests/Pods-BikeStationsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B45635DA2E919EFD9A7070E /* Pods-BikeStations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStations.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeStations/Pods-BikeStations.release.xcconfig"; sourceTree = "<group>"; };
 		965E753722311C542A436BE6 /* Pods_BikeStations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeStations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6645280C441E952E4B1FC12 /* Pods-BikeStationsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStationsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BikeStationsTests/Pods-BikeStationsTests.release.xcconfig"; sourceTree = "<group>"; };
 		B08269C392026BDA852AD563 /* Pods-BikeStations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStations.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BikeStations/Pods-BikeStations.debug.xcconfig"; sourceTree = "<group>"; };
 		BE15F8EB1DCB8C5D00272E22 /* BikeStations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeStations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15F8EE1DCB8C5D00272E22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +68,6 @@
 		BE15F8FB1DCB8C5D00272E22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE15F8FD1DCB8C5D00272E22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE15F9021DCB8C5D00272E22 /* BikeStationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeStationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE15F9061DCB8C5D00272E22 /* BikeStationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationsTests.swift; sourceTree = "<group>"; };
 		BE15F9081DCB8C5D00272E22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE15F90D1DCB8C5D00272E22 /* BikeStationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeStationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15F9111DCB8C5D00272E22 /* BikeStationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationsUITests.swift; sourceTree = "<group>"; };
@@ -63,8 +76,16 @@
 		BE15F9251DCB925800272E22 /* BikeStationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeStationController.swift; path = Modules/Controller/BikeStationController.swift; sourceTree = "<group>"; };
 		BE15F92A1DCB97F900272E22 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BE15F92E1DCB9C9E00272E22 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		BE32B9541DCBA4AE00372398 /* AnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnotationView.swift; path = Modules/Views/AnotationView.swift; sourceTree = "<group>"; };
-		BE32B9571DCBC24A00372398 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		BE32B9541DCBA4AE00372398 /* CalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalloutView.swift; path = Modules/Views/CalloutView.swift; sourceTree = "<group>"; };
+		BE32B9571DCBC24A00372398 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
+		BE32B95B1DCBD02800372398 /* BikeStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeStationStore.swift; path = Modules/Persistence/BikeStationStore.swift; sourceTree = "<group>"; };
+		BE32B95F1DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BikeStationEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BE32B9621DCBDC3A00372398 /* BikeStationsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BikeStationsTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		BE32B9631DCBDC3A00372398 /* TestBikeStationPersistency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBikeStationPersistency.swift; sourceTree = "<group>"; };
+		BE32B96A1DCBFD8300372398 /* BikeStationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BikeStationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BE32B96C1DCC07E800372398 /* MapViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewHelper.swift; sourceTree = "<group>"; };
+		BE32B96E1DCC28FC00372398 /* CalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalloutView.xib; path = Modules/Views/CalloutView.xib; sourceTree = "<group>"; };
+		BE32B9701DCC301600372398 /* AnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnnotationView.swift; path = Modules/Views/AnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				504DC8F3D786267C27728B2E /* Pods_BikeStationsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +120,8 @@
 			children = (
 				B08269C392026BDA852AD563 /* Pods-BikeStations.debug.xcconfig */,
 				3B45635DA2E919EFD9A7070E /* Pods-BikeStations.release.xcconfig */,
+				3A324F465C05D5C2CC34304E /* Pods-BikeStationsTests.debug.xcconfig */,
+				A6645280C441E952E4B1FC12 /* Pods-BikeStationsTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -106,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				965E753722311C542A436BE6 /* Pods_BikeStations.framework */,
+				0DE2A549F051120EAD9AF7EB /* Pods_BikeStationsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,7 +160,6 @@
 		BE15F8ED1DCB8C5D00272E22 /* BikeStations */ = {
 			isa = PBXGroup;
 			children = (
-				BE32B9561DCBC22200372398 /* Persistence */,
 				BE15F9291DCB97EC00272E22 /* Helper Classes */,
 				BE15F9281DCB976000272E22 /* AppDegelate */,
 				BE15F91F1DCB8C7B00272E22 /* Modules */,
@@ -151,8 +175,9 @@
 		BE15F9051DCB8C5D00272E22 /* BikeStationsTests */ = {
 			isa = PBXGroup;
 			children = (
-				BE15F9061DCB8C5D00272E22 /* BikeStationsTests.swift */,
 				BE15F9081DCB8C5D00272E22 /* Info.plist */,
+				BE32B9631DCBDC3A00372398 /* TestBikeStationPersistency.swift */,
+				BE32B9621DCBDC3A00372398 /* BikeStationsTests-Bridging-Header.h */,
 			);
 			path = BikeStationsTests;
 			sourceTree = "<group>";
@@ -193,6 +218,7 @@
 		BE15F9241DCB923400272E22 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				BE32B9591DCBCFCA00372398 /* Persistence */,
 				BE32B9531DCBA48300372398 /* Views */,
 				BE32B9521DCBA10F00372398 /* Client */,
 				BE15F9231DCB8D2000272E22 /* Controller */,
@@ -214,6 +240,8 @@
 			children = (
 				BE15F92A1DCB97F900272E22 /* Constants.swift */,
 				BE15F92E1DCB9C9E00272E22 /* Error.swift */,
+				BE32B9571DCBC24A00372398 /* PersistencyManager.swift */,
+				BE32B96C1DCC07E800372398 /* MapViewHelper.swift */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -229,17 +257,29 @@
 		BE32B9531DCBA48300372398 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BE32B9541DCBA4AE00372398 /* AnotationView.swift */,
+				BE32B9541DCBA4AE00372398 /* CalloutView.swift */,
+				BE32B96E1DCC28FC00372398 /* CalloutView.xib */,
+				BE32B9701DCC301600372398 /* AnnotationView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		BE32B9561DCBC22200372398 /* Persistence */ = {
+		BE32B9591DCBCFCA00372398 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				BE32B9571DCBC24A00372398 /* PersistenceManager.swift */,
+				BE32B95D1DCBD11A00372398 /* Entities */,
+				BE32B95B1DCBD02800372398 /* BikeStationStore.swift */,
 			);
 			name = Persistence;
+			sourceTree = "<group>";
+		};
+		BE32B95D1DCBD11A00372398 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BE32B96A1DCBFD8300372398 /* BikeStationEntity+CoreDataClass.swift */,
+				BE32B95F1DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,9 +309,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE15F9191DCB8C5D00272E22 /* Build configuration list for PBXNativeTarget "BikeStationsTests" */;
 			buildPhases = (
+				AB2C2A66AB11B434C0CB557E /* [CP] Check Pods Manifest.lock */,
 				BE15F8FE1DCB8C5D00272E22 /* Sources */,
 				BE15F8FF1DCB8C5D00272E22 /* Frameworks */,
 				BE15F9001DCB8C5D00272E22 /* Resources */,
+				F7EC79D10FBE9EF6F5DB4AA8 /* [CP] Embed Pods Frameworks */,
+				0B264236AAF37B3BFD54B737 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -359,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE15F8FC1DCB8C5D00272E22 /* LaunchScreen.storyboard in Resources */,
+				BE32B96F1DCC28FC00372398 /* CalloutView.xib in Resources */,
 				BE15F8F91DCB8C5D00272E22 /* Assets.xcassets in Resources */,
 				BE15F8F41DCB8C5D00272E22 /* Main.storyboard in Resources */,
 			);
@@ -381,6 +425,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0B264236AAF37B3BFD54B737 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeStationsTests/Pods-BikeStationsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5E4724BF56D7A5C1839A1C67 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,6 +470,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeStations/Pods-BikeStations-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AB2C2A66AB11B434C0CB557E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		BFE116AD092C63603F80E388 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,6 +500,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeStations/Pods-BikeStations-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F7EC79D10FBE9EF6F5DB4AA8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BikeStationsTests/Pods-BikeStationsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -434,13 +523,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE15F92F1DCB9C9E00272E22 /* Error.swift in Sources */,
+				BE32B95C1DCBD02800372398 /* BikeStationStore.swift in Sources */,
+				BE32B96B1DCBFD8300372398 /* BikeStationEntity+CoreDataClass.swift in Sources */,
+				BE32B9711DCC301600372398 /* AnnotationView.swift in Sources */,
 				BE15F8F71DCB8C5D00272E22 /* BikeStations.xcdatamodeld in Sources */,
 				BE15F9211DCB8C9D00272E22 /* BikeStation.swift in Sources */,
 				BE15F8F11DCB8C5D00272E22 /* MapViewController.swift in Sources */,
-				BE32B9551DCBA4AE00372398 /* AnotationView.swift in Sources */,
+				BE32B9551DCBA4AE00372398 /* CalloutView.swift in Sources */,
 				BE15F9261DCB925800272E22 /* BikeStationController.swift in Sources */,
-				BE32B9581DCBC24A00372398 /* PersistenceManager.swift in Sources */,
+				BE32B9581DCBC24A00372398 /* PersistencyManager.swift in Sources */,
+				BE32B96D1DCC07E800372398 /* MapViewHelper.swift in Sources */,
 				BE15F8EF1DCB8C5D00272E22 /* AppDelegate.swift in Sources */,
+				BE32B9611DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift in Sources */,
 				BE15F92B1DCB97F900272E22 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,7 +543,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE15F9071DCB8C5D00272E22 /* BikeStationsTests.swift in Sources */,
+				BE32B9681DCBDD5100372398 /* PersistencyManager.swift in Sources */,
+				BE32B9641DCBDC3A00372398 /* TestBikeStationPersistency.swift in Sources */,
+				BE32B9651DCBDCAA00372398 /* BikeStationStore.swift in Sources */,
+				BE32B9671DCBDCB700372398 /* BikeStationEntity+CoreDataProperties.swift in Sources */,
+				BE32B9691DCBE16400372398 /* BikeStation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,14 +715,18 @@
 		};
 		BE15F91A1DCB8C5D00272E22 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A324F465C05D5C2CC34304E /* Pods-BikeStationsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = KZ6MLA9K63;
 				INFOPLIST_FILE = BikeStationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.saturnino.BikeStationsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BikeStationsTests/BikeStationsTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeStations.app/BikeStations";
 			};
@@ -632,14 +734,17 @@
 		};
 		BE15F91B1DCB8C5D00272E22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6645280C441E952E4B1FC12 /* Pods-BikeStationsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = KZ6MLA9K63;
 				INFOPLIST_FILE = BikeStationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.saturnino.BikeStationsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BikeStationsTests/BikeStationsTests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BikeStations.app/BikeStations";
 			};

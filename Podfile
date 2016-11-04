@@ -5,7 +5,12 @@ use_frameworks!
 
 target :BikeStations do
   pod 'Alamofire', '~> 4.0.0'
-  pod 'MagicalRecord/Shorthand'
+  pod 'MagicalRecord'
+end
+
+target :BikeStationsTests do
+    pod 'Alamofire', '~> 4.0.0'
+    pod 'MagicalRecord'
 end
 
 post_install do |installer|
