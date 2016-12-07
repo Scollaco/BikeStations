@@ -12,32 +12,69 @@ import MapKit
 class CalloutView: UIViewController {
     
     var parentFrame : CGRect?
+    var loadingView : UIView?
+    var bikeStation : BikeStation?
+    let controller =  BikeStationController()
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, frame : CGRect) {
+    @IBOutlet weak var labelName: UILabel! {
+    
+        didSet {
+            labelName.text = bikeStation!.name
+        }
+    }
+    
+    
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, frame : CGRect, bikeStation : BikeStation) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.parentFrame = frame
+        self.bikeStation = bikeStation
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         showCallout(frame: parentFrame!)
+        fetchStationInformation()
+    }
+    
+    func fetchStationInformation() {
+    
+        loadingView = LoadingView.init(frame: view.bounds)
+        view.addSubview(loadingView!)
+        
+        controller.getBikeStationInfo(stationId: bikeStation!.stationId!) { (stations, errorMessage) in
+            
+            self.loadingView?.removeFromSuperview()
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension CalloutView {
 
     fileprivate func showCallout(frame : CGRect) {
-    
+        
         let screenSize = UIScreen.main.bounds.size
         
-        view.frame = CGRect(x: 15, y: frame.origin.y - view.frame.size.height - 15, width: screenSize.width - 30, height: 200)
-        view.center = CGPoint.init(x: view.frame.size.width / 2, y: frame.size.height / 2)
-        UIView.animate(withDuration: 0.3) { 
-            self.view.alpha = 1
+        UIView.animate(withDuration: 0.3, animations: { [unowned self] in
+            self.view.frame = CGRect(x: 15, y: 70, width: screenSize.width - 30, height: 200)
+        }) { (finished) in
+            
+            UIView.animate(withDuration: 0.3) { [unowned self] in
+                self.view.alpha = 1
+            }
         }
+    }
+    
+    func dismissCallout() {
         
-        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.alpha = 0
+        }) { (finished) in
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

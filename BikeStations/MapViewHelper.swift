@@ -10,7 +10,7 @@ import MapKit
 
 extension MKMapView {
 
-    func centerAnnotation(annotationView : AnnotationView) {
+    func centerAnnotation(annotationView : MapViewAnnotation) {
         
         var rect = self.visibleMapRect
         let point = MKMapPointForCoordinate(annotationView.coordinate)

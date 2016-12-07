@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalloutView" customModule="BikeStations" customModuleProvider="target">
             <connections>
+                <outlet property="labelName" destination="qFe-2s-R0e" id="mdb-Qc-PGd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="OnZ-Jg-jz8"/>
             </connections>
         </placeholder>
@@ -15,10 +16,44 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="290" height="158"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOa-4r-P4S">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="59" id="HE1-C7-AQQ"/>
+                        <constraint firstAttribute="height" constant="50" id="e7T-gU-UK0"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="bike"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="124 E 124th st." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFe-2s-R0e">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="kr1-Lf-RNT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" red="0.47058823529999999" green="0.64705882349999999" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cOa-4r-P4S" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="N5c-YO-0mC"/>
+                <constraint firstAttribute="trailing" secondItem="qFe-2s-R0e" secondAttribute="trailing" constant="16" id="WE6-he-YZO"/>
+                <constraint firstItem="cOa-4r-P4S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bHN-ej-qA1"/>
+                <constraint firstItem="qFe-2s-R0e" firstAttribute="top" secondItem="cOa-4r-P4S" secondAttribute="bottom" constant="9" id="gC4-ah-5oX"/>
+                <constraint firstItem="qFe-2s-R0e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="nek-6f-SaX"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="6"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="76" y="-179"/>
         </view>
     </objects>
+    <resources>
+        <image name="bike" width="64" height="64"/>
+    </resources>
 </document>
