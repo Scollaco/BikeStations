@@ -104,7 +104,7 @@ extension MapViewController : MKMapViewDelegate {
         }
     }
     
-    fileprivate func selectedStation(annotation : MapViewAnnotation) -> BikeStation? {
+    private func selectedStation(annotation : MapViewAnnotation) -> BikeStation? {
     
         var bikeStation : BikeStation? = nil
         
