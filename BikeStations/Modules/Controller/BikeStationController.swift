@@ -15,8 +15,8 @@ protocol BikeStationClientProtocol {
     func getBikeStationInfo(stationId: String, completion : @escaping UniqueStationCompletion)
 }
 
-typealias BikeStationsCompletion = ([BikeStation]?, String?) -> Void
-typealias UniqueStationCompletion = (BikeStation?, String?) -> Void
+typealias BikeStationsCompletion = (Result<[BikeStation], ErrorType>) -> Void
+typealias UniqueStationCompletion = (Result<BikeStation, ErrorType>) -> Void
 
 
 class BikeStationController: NSObject, BikeStationClientProtocol {
@@ -27,17 +27,11 @@ class BikeStationController: NSObject, BikeStationClientProtocol {
         
         let url = urlWith(string: "gbfs/en/station_information.json")
         
-        guard url != nil else {
-        
-            completion(nil, "")
-            return
-        }
-        
         Alamofire.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
             
             guard let json = response.result.value as? [String:AnyObject] else {
                 
-                completion(nil, response.result.error.debugDescription)
+                completion(.failure(response.result.error!))
                 return
             }
             
@@ -50,7 +44,7 @@ class BikeStationController: NSObject, BikeStationClientProtocol {
                 return station
             })
             
-            completion (self.bikeStations, nil)
+            completion (.success(self.bikeStations))
         }
     }
     
@@ -58,15 +52,9 @@ class BikeStationController: NSObject, BikeStationClientProtocol {
         
         let url = urlWith(string: "gbfs/en/station_status.json")
         
-        guard url != nil else {
-            
-            completion(nil, "")
-            return
-        }
-        
         Alamofire.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
             
-            completion(nil, response.result.error.debugDescription)
+            
         }
     }
 }

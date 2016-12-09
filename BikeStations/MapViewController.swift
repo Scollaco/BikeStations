@@ -23,11 +23,12 @@ final class MapViewController: UIViewController {
     
     fileprivate func getBikeStations() {
     
-        controller.getBikeStations { [unowned self] stations, errorMessage in
+        controller.getBikeStations { result in
             
-            if stations != nil {
-                self.addAnottationsOnMap(stations)
-            } else {
+            switch result {
+            case .success(let stations) : self.addAnottationsOnMap(stations)
+            case .failure(let error) :
+                print(error.localizedDescription)
                 self.addAnnotationFromDatabase()
             }
         }

@@ -8,13 +8,16 @@
 
 import UIKit
 
-class BikeStationInfo: NSObject {
+struct BikeStationInfo {
 
     var name : String?
     var bikesAvailable : Int?
     var docksAvailable : Int?
     var lastReported : Date?
-    
+}
+
+extension BikeStationInfo {
+
     init(dictionary : [String : Any], name : String) {
         
         self.name = name
@@ -22,13 +25,5 @@ class BikeStationInfo: NSObject {
         self.docksAvailable = dictionary["num_docks_available"] as? Int
         self.lastReported = dictionary["last_reported"] as? Date
         
-    }
-    
-    override var description: String {
-        
-        return "Name : \(name)" +
-            "\nBikes Available : \(bikesAvailable)" +
-            "\nDocks Available : \(docksAvailable)" +
-        "\nLast Reported : \(lastReported)"
     }
 }

@@ -41,7 +41,7 @@ class CalloutView: UIViewController {
         loadingView = LoadingView.init(frame: view.bounds)
         view.addSubview(loadingView!)
         
-        controller.getBikeStationInfo(stationId: bikeStation!.stationId!) { (stations, errorMessage) in
+        controller.getBikeStationInfo(stationId: bikeStation!.stationId!) { [unowned self] (result) in
             
             self.loadingView?.removeFromSuperview()
         }
