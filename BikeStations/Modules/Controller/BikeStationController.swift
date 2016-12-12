@@ -27,14 +27,15 @@ class BikeStationController: NSObject {
                 
                 let jsonResult = json as? [String : Any]
                 
-                guard jsonResult != nil else {
-                    completion(.failure(.unknown("Some error occurred.")))
-                    return
+            
+                guard  jsonResult != nil,
+                       let jsonData = jsonResult!["data"] as? [String : Any],
+                       let stations = jsonData["stations"] as? [Any] else {
+                
+                        completion(.failure(.unknown("Some error occurred.")))
+                        return
                 }
-                
-                let jsonData = jsonResult!["data"] as! [String : Any]
-                let stations = jsonData["stations"] as! [Any]
-                
+          
                 self.bikeStations = stations.flatMap({ dictionary  in
                     
                     let station = BikeStation.init(dictionary: dictionary as! [String : Any])
@@ -56,19 +57,18 @@ class BikeStationController: NSObject {
         let resource = Resource(path:"gbfs/en/station_status.json", method: .GET)
         WebService().makeConnection(resource) { (result) in
          
-            //TODO: Handle web service response
             switch result {
             case .success(let json):
                 
                 let jsonResult = json as? [String : Any]
                 
-                guard jsonResult != nil else {
-                    completion(.failure(.unknown("Some error occurred.")))
-                    return
+                guard  jsonResult != nil,
+                    let jsonData = jsonResult!["data"] as? [String : Any],
+                    let stations = jsonData["stations"] as? [[String : Any]] else {
+                        
+                        completion(.failure(.unknown("Some error occurred.")))
+                        return
                 }
-                
-                let jsonData = jsonResult!["data"] as! [String : Any]
-                let stations = jsonData["stations"] as! [[String:Any]]
                 
                 
                 let bikeStationDic = stations.filter({
