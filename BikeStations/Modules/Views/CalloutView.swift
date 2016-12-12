@@ -43,7 +43,9 @@ class CalloutView: UIViewController {
         
         controller.getBikeStationInfo(stationId: bikeStation!.stationId!) { [unowned self] (result) in
             
-            self.loadingView?.removeFromSuperview()
+            DispatchQueue.main.async {
+             self.loadingView?.removeFromSuperview()   
+            }
         }
     }
     

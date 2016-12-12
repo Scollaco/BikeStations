@@ -11,6 +11,7 @@ import MagicalRecord
 
 let persistencyStoreName = "BikeStations"
 
+//TODO: This class is not fully implemented yet.
 class PersistencyManager: NSObject {
     
     class func fetchPersistedObjects(entityName : String) -> [NSManagedObject]? {

@@ -55,14 +55,15 @@ extension MapViewController {
     
     func addAnottationsOnMapFromDatabase(_ stations : [BikeStationEntity]?) {
         
-        var annotations : [MKPointAnnotation] = []
+        var annotations : [MapViewAnnotation] = []
         stations?.forEach({ (station) in
             
-            let startPoint = MKPointAnnotation.init()
-            startPoint.coordinate = CLLocationCoordinate2D(latitude: station.latitude, longitude: station.longitude)
-            startPoint.title = station.name
-            annotations.append(startPoint)
-        })
+            
+            let coordinate = CLLocationCoordinate2D(latitude: station.latitude, longitude: station.longitude)
+
+            let pin = MapViewAnnotation.init(title: station.name!, subtitle: "", coordinate: coordinate)
+            annotations.append(pin)
+      })
         
         DispatchQueue.main.async { [unowned self] in
             self.mapStations.addAnnotations(annotations)
@@ -94,9 +95,17 @@ extension MapViewController : MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
-        let station = selectedStation(annotation: view.annotation! as! MapViewAnnotation)!
+        guard view.annotation! is MapViewAnnotation else {
+            return
+        }
         
-        calloutView = CalloutView.init(nibName: "CalloutView", bundle: nil, frame: view.frame, bikeStation : station)
+        let station = selectedStation(annotation: view.annotation as! MapViewAnnotation)
+        
+        guard station != nil else {
+            return
+        }
+        
+        calloutView = CalloutView.init(nibName: "CalloutView", bundle: nil, frame: view.frame, bikeStation : station!)
         
         UIView.animate(withDuration: 0.3) {
             self.view.addSubview(self.calloutView.view)
@@ -106,6 +115,14 @@ extension MapViewController : MKMapViewDelegate {
     
     private func selectedStation(annotation : MapViewAnnotation) -> BikeStation? {
     
+        guard controller.bikeStations.count > 0 else {
+        
+            UIAlertController.presentAlert(message: "Some error occurred retrieving the station's info. Please, check your connection and relaunch the app.", parent: self)
+            return nil
+        
+        }
+        
+        
         var bikeStation : BikeStation? = nil
         
         controller.bikeStations.forEach { (station) in

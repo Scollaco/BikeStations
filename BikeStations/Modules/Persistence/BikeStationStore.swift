@@ -12,6 +12,8 @@ import CoreData
 
 class BikeStationStore: NSObject {
 
+    let defaultContext = NSManagedObjectContext.mr_default()
+    
     func saveStationToDataBase(station : BikeStation) {
         
         guard stationAlreadyExists(station: station) == false else {
@@ -25,8 +27,17 @@ class BikeStationStore: NSObject {
             object?.longitude = station.longitude!
             object?.stationId = station.stationId
         
-            let localContext = NSManagedObjectContext.mr_default()
-            localContext.mr_saveToPersistentStoreAndWait()
+            defaultContext.mr_saveToPersistentStoreAndWait()
+    }
+    
+    func deleteStation(station : BikeStation) {
+
+        guard station.stationId != nil else {
+            return
+        }
+        
+        let object = BikeStationEntity.mr_findFirst(byAttribute: "stationId", withValue: station.stationId!)
+        object?.mr_deleteEntity(in: defaultContext)
     }
     
     fileprivate func updateStation(station : BikeStation) {
@@ -37,8 +48,7 @@ class BikeStationStore: NSObject {
             object?.longitude = station.longitude!
             object?.stationId = station.stationId
         
-            let localContext = NSManagedObjectContext.mr_default()
-            localContext.mr_saveToPersistentStoreAndWait()
+            defaultContext.mr_saveToPersistentStoreAndWait()
     }
     
     fileprivate func stationAlreadyExists(station : BikeStation) -> Bool {

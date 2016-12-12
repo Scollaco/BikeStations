@@ -36,6 +36,7 @@
 		BE8B25EC1DFB4F4E00FFBEC3 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B25EB1DFB4F4E00FFBEC3 /* Resource.swift */; };
 		BE8B25F31DFB51FA00FFBEC3 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B25F21DFB51FA00FFBEC3 /* WebService.swift */; };
 		BE8B25F61DFCF80B00FFBEC3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B25F51DFCF80B00FFBEC3 /* Parser.swift */; };
+		BE8B25F91DFF14F700FFBEC3 /* UIAlertControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B25F81DFF14F700FFBEC3 /* UIAlertControllerHelper.swift */; };
 		BE9020831DCCE39E00ECD094 /* MapViewAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9020821DCCE39E00ECD094 /* MapViewAnnotation.swift */; };
 		BE9020851DCCF79E00ECD094 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9020841DCCF79E00ECD094 /* LoadingView.swift */; };
 		BE9020871DCD140E00ECD094 /* BikeStationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9020861DCD140E00ECD094 /* BikeStationInfo.swift */; };
@@ -95,6 +96,7 @@
 		BE8B25EB1DFB4F4E00FFBEC3 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		BE8B25F21DFB51FA00FFBEC3 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		BE8B25F51DFCF80B00FFBEC3 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		BE8B25F81DFF14F700FFBEC3 /* UIAlertControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerHelper.swift; sourceTree = "<group>"; };
 		BE9020821DCCE39E00ECD094 /* MapViewAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewAnnotation.swift; path = Modules/Views/MapViewAnnotation.swift; sourceTree = "<group>"; };
 		BE9020841DCCF79E00ECD094 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = Modules/Views/LoadingView.swift; sourceTree = "<group>"; };
 		BE9020861DCD140E00ECD094 /* BikeStationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeStationInfo.swift; path = Modules/Model/BikeStationInfo.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		BE15F9291DCB97EC00272E22 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE8B25F81DFF14F700FFBEC3 /* UIAlertControllerHelper.swift */,
 				BE15F92A1DCB97F900272E22 /* Constants.swift */,
 				BE32B96C1DCC07E800372398 /* MapViewHelper.swift */,
 			);
@@ -588,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8B25F91DFF14F700FFBEC3 /* UIAlertControllerHelper.swift in Sources */,
 				BE15F92F1DCB9C9E00272E22 /* Error.swift in Sources */,
 				BE32B95C1DCBD02800372398 /* BikeStationStore.swift in Sources */,
 				BE32B96B1DCBFD8300372398 /* BikeStationEntity+CoreDataClass.swift in Sources */,

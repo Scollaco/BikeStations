@@ -59,7 +59,31 @@ class BikeStationController: NSObject {
             //TODO: Handle web service response
             switch result {
             case .success(let json):
-                print(json!)
+                
+                let jsonResult = json as? [String : Any]
+                
+                guard jsonResult != nil else {
+                    completion(.failure(.unknown("Some error occurred.")))
+                    return
+                }
+                
+                let jsonData = jsonResult!["data"] as! [String : Any]
+                let stations = jsonData["stations"] as! [[String:Any]]
+                
+                
+                let bikeStationDic = stations.filter({
+                    ($0["station_id"] as! String) == stationId
+                }).first
+                
+                guard bikeStationDic != nil else {
+                
+                    completion(.failure(.unknown("No station with id \(stationId) found!")))
+                    return
+                }
+                
+                let station = BikeStation.init(dictionary: bikeStationDic!)
+                completion(.success(station))
+                
             case .failure(let error):
                 completion(.failure(error))
             }
