@@ -43,6 +43,10 @@ class BikeStationStore: NSObject {
     
     fileprivate func stationAlreadyExists(station : BikeStation) -> Bool {
     
+        guard station.stationId != nil else {
+            return false
+        }
+        
         let persistedObj = BikeStationEntity.mr_findFirst(byAttribute: "stationId", withValue: station.stationId!)
         return persistedObj != nil
     }

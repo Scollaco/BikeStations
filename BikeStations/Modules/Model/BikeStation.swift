@@ -33,13 +33,16 @@ struct BikeStation {
 }
 
 extension BikeStation {
-
+    
     init(dictionary : [String : Any]) {
+        
+        guard let latitude = dictionary["lat"] as? Double,
+              let longitude = dictionary["lon"] as? Double else { return }
         
         self.name = dictionary["name"] as? String
         self.stationId = dictionary["station_id"] as? String
-        self.latitude =  dictionary["lat"] as? Double
-        self.longitude =  dictionary["lon"] as? Double
+        self.latitude =  latitude
+        self.longitude =  longitude
     }
 }
 

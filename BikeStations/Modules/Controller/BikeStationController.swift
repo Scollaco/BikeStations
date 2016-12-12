@@ -9,66 +9,62 @@
 import UIKit
 import Alamofire
 
-protocol BikeStationClientProtocol {
-    
-    func getBikeStations(completion : @escaping  BikeStationsCompletion)
-    func getBikeStationInfo(stationId: String, completion : @escaping UniqueStationCompletion)
-}
-
 typealias BikeStationsCompletion = (Result<[BikeStation], ErrorType>) -> Void
 typealias UniqueStationCompletion = (Result<BikeStation, ErrorType>) -> Void
 
 
-class BikeStationController: NSObject, BikeStationClientProtocol {
+class BikeStationController: NSObject {
     
     var bikeStations : [BikeStation]! = []
     
     func getBikeStations(completion : @escaping BikeStationsCompletion) {
         
-        let url = urlWith(string: "gbfs/en/station_information.json")
-        
-        Alamofire.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+        let resource = Resource(path: "gbfs/en/station_information.json", method: .GET)
+        WebService().makeConnection(resource) { (result) in
             
-            guard let json = response.result.value as? [String:AnyObject] else {
+            switch result {
+            case .success(let json):
                 
-                completion(.failure(response.result.error!))
-                return
-            }
-            
-            let stations : [Any]? = json["data"]?["stations"] as? [Any]
-            
-            self.bikeStations = stations!.flatMap({ dictionary  in
+                let jsonResult = json as? [String : Any]
                 
-                let station = BikeStation.init(dictionary: dictionary as! [String : Any])
-                station.store.saveStationToDataBase(station: station)
-                return station
-            })
-            
-            completion (.success(self.bikeStations))
+                guard jsonResult != nil else {
+                    completion(.failure(.unknown("Some error occurred.")))
+                    return
+                }
+                
+                let jsonData = jsonResult!["data"] as! [String : Any]
+                let stations = jsonData["stations"] as! [Any]
+                
+                self.bikeStations = stations.flatMap({ dictionary  in
+                    
+                    let station = BikeStation.init(dictionary: dictionary as! [String : Any])
+                    station.store.saveStationToDataBase(station: station)
+                    return station
+                })
+                
+                completion(.success(self.bikeStations))
+                
+            case .failure(let error):
+                completion(.failure(error))
+            }            
         }
     }
+
     
     func getBikeStationInfo(stationId: String, completion : @escaping UniqueStationCompletion) {
         
-        let url = urlWith(string: "gbfs/en/station_status.json")
-        
-        Alamofire.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
-            
-            
+        let resource = Resource(path:"gbfs/en/station_status.json", method: .GET)
+        WebService().makeConnection(resource) { (result) in
+         
+            //TODO: Handle web service response
+            switch result {
+            case .success(let json):
+                print(json!)
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }
 
-extension BikeStationController {
-
-    func urlWith(string : String) -> URL? {
-    
-        let urlString  = BASE_URL + string
-        if let url = URL.init(string: urlString) {
-            return url
-        } else {
-            return nil
-        }
-    }
-}
 

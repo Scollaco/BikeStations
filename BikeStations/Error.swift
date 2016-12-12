@@ -9,6 +9,8 @@
 import Foundation
 
 enum ErrorType : Error {
-    case network(String)
+    case network(Error)
+    case parser
     case unknown(String)
+    
 }

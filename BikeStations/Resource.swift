@@ -8,24 +8,31 @@
 
 import Foundation
 
-public struct Resource<T> {
+public typealias Headers = [String: String]
 
-    let url: URL
-    let parse: (Data) -> T?
+public struct Resource {
+    
+    public let path: String
+    public let method: Method
+    
+    var finalUrl : URL {
+        let urlString = BASE_URL + path
+        return URL.init(string: urlString)!
+    }
 }
 
+public enum Method: String {
+    case GET
+    case POST
+}
 
 extension Resource {
     
-    init(url: URL, parseJSON: @escaping (Any) -> T?) {
+    public func request(_ baseURL: String) -> URLRequest {
         
-        self.url = url
-        self.parse = { data in
+        let request = NSMutableURLRequest(url: finalUrl)
+        request.httpMethod = method.rawValue
         
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            
-        }
-        
+        return request as URLRequest
     }
-
 }

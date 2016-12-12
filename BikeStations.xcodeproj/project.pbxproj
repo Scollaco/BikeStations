@@ -34,8 +34,8 @@
 		BE32B96F1DCC28FC00372398 /* CalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE32B96E1DCC28FC00372398 /* CalloutView.xib */; };
 		BE8B25E91DFA58B200FFBEC3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B25E81DFA58B200FFBEC3 /* Result.swift */; };
 		BE8B25EC1DFB4F4E00FFBEC3 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B25EB1DFB4F4E00FFBEC3 /* Resource.swift */; };
-		BE8B25EE1DFB505200FFBEC3 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B25ED1DFB505200FFBEC3 /* Connection.swift */; };
 		BE8B25F31DFB51FA00FFBEC3 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B25F21DFB51FA00FFBEC3 /* WebService.swift */; };
+		BE8B25F61DFCF80B00FFBEC3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B25F51DFCF80B00FFBEC3 /* Parser.swift */; };
 		BE9020831DCCE39E00ECD094 /* MapViewAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9020821DCCE39E00ECD094 /* MapViewAnnotation.swift */; };
 		BE9020851DCCF79E00ECD094 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9020841DCCF79E00ECD094 /* LoadingView.swift */; };
 		BE9020871DCD140E00ECD094 /* BikeStationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9020861DCD140E00ECD094 /* BikeStationInfo.swift */; };
@@ -93,8 +93,8 @@
 		BE32B96E1DCC28FC00372398 /* CalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalloutView.xib; path = Modules/Views/CalloutView.xib; sourceTree = "<group>"; };
 		BE8B25E81DFA58B200FFBEC3 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BE8B25EB1DFB4F4E00FFBEC3 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
-		BE8B25ED1DFB505200FFBEC3 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		BE8B25F21DFB51FA00FFBEC3 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		BE8B25F51DFCF80B00FFBEC3 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		BE9020821DCCE39E00ECD094 /* MapViewAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewAnnotation.swift; path = Modules/Views/MapViewAnnotation.swift; sourceTree = "<group>"; };
 		BE9020841DCCF79E00ECD094 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = Modules/Views/LoadingView.swift; sourceTree = "<group>"; };
 		BE9020861DCD140E00ECD094 /* BikeStationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeStationInfo.swift; path = Modules/Model/BikeStationInfo.swift; sourceTree = "<group>"; };
@@ -253,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				BE15F92A1DCB97F900272E22 /* Constants.swift */,
-				BE15F92E1DCB9C9E00272E22 /* Error.swift */,
 				BE32B96C1DCC07E800372398 /* MapViewHelper.swift */,
 			);
 			name = "Helper Classes";
@@ -300,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				BE8B25EB1DFB4F4E00FFBEC3 /* Resource.swift */,
-				BE8B25ED1DFB505200FFBEC3 /* Connection.swift */,
 				BE8B25F21DFB51FA00FFBEC3 /* WebService.swift */,
 			);
 			name = Network;
@@ -309,6 +307,8 @@
 		BE8B25EF1DFB50D500FFBEC3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BE8B25F71DFDB25700FFBEC3 /* Error */,
+				BE8B25F41DFCF7FF00FFBEC3 /* Parser */,
 				BE8B25F11DFB50EC00FFBEC3 /* Cache */,
 				BE8B25F01DFB50DF00FFBEC3 /* Result */,
 				BE8B25EA1DFB4F2D00FFBEC3 /* Network */,
@@ -330,6 +330,22 @@
 				BE32B9571DCBC24A00372398 /* PersistencyManager.swift */,
 			);
 			name = Cache;
+			sourceTree = "<group>";
+		};
+		BE8B25F41DFCF7FF00FFBEC3 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				BE8B25F51DFCF80B00FFBEC3 /* Parser.swift */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		BE8B25F71DFDB25700FFBEC3 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				BE15F92E1DCB9C9E00272E22 /* Error.swift */,
+			);
+			name = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,8 +599,8 @@
 				BE32B9551DCBA4AE00372398 /* CalloutView.swift in Sources */,
 				BE8B25EC1DFB4F4E00FFBEC3 /* Resource.swift in Sources */,
 				BE9020871DCD140E00ECD094 /* BikeStationInfo.swift in Sources */,
-				BE8B25EE1DFB505200FFBEC3 /* Connection.swift in Sources */,
 				BE15F9261DCB925800272E22 /* BikeStationController.swift in Sources */,
+				BE8B25F61DFCF80B00FFBEC3 /* Parser.swift in Sources */,
 				BE32B9581DCBC24A00372398 /* PersistencyManager.swift in Sources */,
 				BE32B96D1DCC07E800372398 /* MapViewHelper.swift in Sources */,
 				BE15F8EF1DCB8C5D00272E22 /* AppDelegate.swift in Sources */,

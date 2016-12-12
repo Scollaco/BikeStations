@@ -9,4 +9,4 @@
 import Foundation
 
 let BASE_URL = "https://gbfs.citibikenyc.com/"
-let unknownErrorMessage = "An unknown error occured"
+

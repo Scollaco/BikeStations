@@ -6,21 +6,35 @@
 //  Copyright © 2016 Green. All rights reserved.
 //
 
-import Alamofire
 import Foundation
 
-final class WebService {
+protocol Connectable {
+    func makeConnection(_ resource: Resource, completion: @escaping (Result<Any?, ErrorType>) -> Void)
+}
 
-    func get<T>(resource: Resource<T>, completion: @escaping (T?) -> ()) {
-     
-        URLSession.shared.dataTask(with: resource.url as URL) { (data, urlResponse, error) in
-            
-            guard let data = data else {
-                completion(nil)
-                return
+final class WebService {
+    
+    fileprivate let session: URLSession
+    
+    init(session: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
+        self.session = session
+    }
+}
+
+extension WebService: Connectable {
+    
+    func makeConnection(_ resource: Resource, completion: @escaping (Result<Any?, ErrorType>) -> Void) {
+        
+        let request = resource.request(BASE_URL)
+        
+        session.dataTask(with: request) { (data, response, error) in
+            switch (data, error) {
+            case(let data?, _):
+                completion(.success(Parser().parse(data)))
+            case(_, let error?):
+                completion(.failure(.network(error)))
+            default: break
             }
-            
-            completion(resource.parse(data))
-        }.resume()
+            }.resume()
     }
 }
