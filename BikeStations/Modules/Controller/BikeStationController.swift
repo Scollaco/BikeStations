@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 typealias BikeStationsCompletion = (Result<[BikeStation], ErrorType>) -> Void
-typealias UniqueStationCompletion = (Result<BikeStation, ErrorType>) -> Void
+typealias UniqueStationCompletion = (Result<BikeStationInfo, ErrorType>) -> Void
 
 
 class BikeStationController: NSObject {
@@ -70,7 +70,6 @@ class BikeStationController: NSObject {
                         return
                 }
                 
-                
                 let bikeStationDic = stations.filter({
                     ($0["station_id"] as! String) == stationId
                 }).first
@@ -81,7 +80,7 @@ class BikeStationController: NSObject {
                     return
                 }
                 
-                let station = BikeStation.init(dictionary: bikeStationDic!)
+                let station = BikeStationInfo.init(dictionary: bikeStationDic!)
                 completion(.success(station))
                 
             case .failure(let error):

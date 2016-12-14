@@ -23,6 +23,10 @@ class CalloutView: UIViewController {
         }
     }
     
+    @IBOutlet weak var docksAvailableLabel: UILabel!
+    @IBOutlet weak var bikesAvailableLabel: UILabel!
+    @IBOutlet weak var lastReportLabel: UILabel!
+    
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, frame : CGRect, bikeStation : BikeStation) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -43,9 +47,19 @@ class CalloutView: UIViewController {
         
         controller.getBikeStationInfo(stationId: bikeStation!.stationId!) { [unowned self] (result) in
             
-            DispatchQueue.main.async {
-             self.loadingView?.removeFromSuperview()   
+            switch result {
+            case .success(let info):
+                
+                DispatchQueue.main.async {
+                    self.docksAvailableLabel.text = "\(info.docksAvailable!)"
+                    self.bikesAvailableLabel.text = "\(info.bikesAvailable!)"
+                    self.lastReportLabel.text = info.lastReported
+                    self.loadingView?.removeFromSuperview()
+                }
+            case .failure(let error): break
             }
+            
+            
         }
     }
     
