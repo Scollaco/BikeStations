@@ -174,10 +174,8 @@
 		BE15F8ED1DCB8C5D00272E22 /* BikeStations */ = {
 			isa = PBXGroup;
 			children = (
-				BE8B25EF1DFB50D500FFBEC3 /* Components */,
 				BE15F9281DCB976000272E22 /* AppDegelate */,
-				BE15F9291DCB97EC00272E22 /* Helper Classes */,
-				BE15F91F1DCB8C7B00272E22 /* Modules */,
+				BE15F91F1DCB8C7B00272E22 /* Classes */,
 				BE15F8F21DCB8C5D00272E22 /* Main.storyboard */,
 				BE15F8F81DCB8C5D00272E22 /* Assets.xcassets */,
 				BE15F8FA1DCB8C5D00272E22 /* LaunchScreen.storyboard */,
@@ -206,12 +204,14 @@
 			path = BikeStationsUITests;
 			sourceTree = "<group>";
 		};
-		BE15F91F1DCB8C7B00272E22 /* Modules */ = {
+		BE15F91F1DCB8C7B00272E22 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE8B25EF1DFB50D500FFBEC3 /* Components */,
+				BE15F9291DCB97EC00272E22 /* Helper Classes */,
 				BE15F9241DCB923400272E22 /* Map */,
 			);
-			name = Modules;
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		BE15F9221DCB8CA200272E22 /* Model */ = {

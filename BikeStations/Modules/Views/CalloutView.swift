@@ -12,7 +12,7 @@ import MapKit
 class CalloutView: UIViewController {
     
     var parentFrame : CGRect?
-    var loadingView : UIView?
+    var loadingView : LoadingView?
     var bikeStation : BikeStation?
     let controller =  BikeStationController()
     
@@ -41,25 +41,32 @@ class CalloutView: UIViewController {
     }
     
     func fetchStationInformation() {
-    
+        
         loadingView = LoadingView.init(frame: view.bounds)
         view.addSubview(loadingView!)
         
         controller.getBikeStationInfo(stationId: bikeStation!.stationId!) { [unowned self] (result) in
             
+            self.setupView(for: result)
+        }
+    }
+    
+    fileprivate func setupView(for result : Result<BikeStationInfo, ErrorType>) {
+    
+        DispatchQueue.main.async {
+            
             switch result {
             case .success(let info):
                 
-                DispatchQueue.main.async {
-                    self.docksAvailableLabel.text = "\(info.docksAvailable!)"
-                    self.bikesAvailableLabel.text = "\(info.bikesAvailable!)"
-                    self.lastReportLabel.text = info.lastReported
-                    self.loadingView?.removeFromSuperview()
-                }
-            case .failure(let error): break
+                self.docksAvailableLabel.text = "\(info.docksAvailable!)"
+                self.bikesAvailableLabel.text = "\(info.bikesAvailable!)"
+                self.lastReportLabel.text = info.lastReported
+                self.loadingView?.removeFromSuperview()
+                
+            case .failure(let error):
+                self.loadingView?.indicator.isHidden = true
+                self.loadingView?.loadingLabel.text = error.localizedDescription
             }
-            
-            
         }
     }
     
