@@ -27,7 +27,6 @@ class BikeStationController: NSObject {
                 
                 let jsonResult = json as? [String : Any]
                 
-            
                 guard  jsonResult != nil,
                        let jsonData = jsonResult!["data"] as? [String : Any],
                        let stations = jsonData["stations"] as? [Any] else {

@@ -24,20 +24,16 @@ final class MapViewController: UIViewController {
     
     fileprivate func getBikeStations() {
         
-        controller.getBikeStations { result in
+        controller.getBikeStations { [unowned self] result in
             
             switch result {
-            case .success( _) : self.addAnnotationFromDatabase()
+            case .success( _) : break 
             case .failure(let error) :
                 print(error.localizedDescription)
             }
+            
+            self.addAnnotationsOnMap()
         }
-    }
-    
-    fileprivate func addAnnotationFromDatabase() {
-    
-        let persistedStations = BikeStationCache.allStations()
-        self.addAnottationsOnMapFromDatabase(persistedStations as [BikeStationEntity]?)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -53,15 +49,19 @@ final class MapViewController: UIViewController {
 
 extension MapViewController {
     
-    func addAnottationsOnMapFromDatabase(_ stations : [BikeStationEntity]?) {
+    func addAnnotationsOnMap() {
+        
+         let stations = BikeStationCache.allStations()
         
         var annotations : [MapViewAnnotation] = []
-        stations?.forEach({ (station) in
+        stations.forEach({ (station) in
             
-            
-            let coordinate = CLLocationCoordinate2D(latitude: station.latitude, longitude: station.longitude)
+            let coordinate = CLLocationCoordinate2D(latitude: station.latitude,
+                                                    longitude: station.longitude)
 
-            let pin = MapViewAnnotation.init(title: station.name!, subtitle: "", coordinate: coordinate)
+            let pin = MapViewAnnotation.init(title: station.name!,
+                                             subtitle: "",
+                                             coordinate: coordinate)
             annotations.append(pin)
       })
         
@@ -70,25 +70,7 @@ extension MapViewController {
             self.mapStations.showAnnotations(annotations, animated: true)
         }
     }
-    
-    func addAnottationsOnMap(_ stations : [BikeStation]?) {
-        
-        var annotations : [MapViewAnnotation] = []
-        stations?.forEach({ (station) in
-            
-            let coordinate = CLLocationCoordinate2D(latitude: station.latitude!, longitude: station.longitude!)
-            
-            let pin = MapViewAnnotation.init(title: station.name!, subtitle: "", coordinate: coordinate)
-            annotations.append(pin)
-        })
-        
-        DispatchQueue.main.async { [unowned self] in
-            self.mapStations.addAnnotations(annotations)
-            self.mapStations.showAnnotations(annotations, animated: true)
-        }
-    }
 }
-
 
 
 extension MapViewController : MKMapViewDelegate {
@@ -119,7 +101,6 @@ extension MapViewController : MKMapViewDelegate {
         
             UIAlertController.presentAlert(message: "Some error occurred retrieving the station's info. Please, check your connection and relaunch the app.", parent: self)
             return nil
-        
         }
         
         
