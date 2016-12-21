@@ -23,7 +23,11 @@ class BikeStationCache {
     
     class func saveStationToDataBase(values : [String : Any]) {
         
-        if let cachedStation = DatabaseController.getContext().fetchFirst(entity: BikeStationEntity.self, by: "stationId", value: values["station_id"] as! String) {
+        guard let _ = values["lat"] as? Double,
+            let _ = values["lon"] as? Double,
+            let stationId = values["station_id"] as? String else { return }
+        
+        if let cachedStation = DatabaseController.getContext().fetchFirst(entity: BikeStationEntity.self, by: "stationId", value: stationId) {
             updateStation(station: cachedStation, newValues: values)
             
         } else {
@@ -37,10 +41,10 @@ class BikeStationCache {
     
     private class func updateStation(station : BikeStationEntity, newValues: [String : Any]) {
         
-        station.name = newValues["name"] as! String?
+        station.name = newValues["name"] as? String
         station.latitude = newValues["lat"] as! Double
         station.longitude = newValues["lon"] as! Double
-        station.stationId = newValues["station_id"] as! String?
+        station.stationId = newValues["station_id"] as? String
     }
     
     //TODO: Implement delete rule
