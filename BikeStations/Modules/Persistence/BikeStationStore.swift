@@ -24,8 +24,9 @@ class BikeStationCache {
     class func saveStationToDataBase(values : [String : Any]) {
         
         guard let _ = values["lat"] as? Double,
-            let _ = values["lon"] as? Double,
-            let stationId = values["station_id"] as? String else { return }
+              let _ = values["lon"] as? Double,
+              let _ = values["name"] as? String,
+              let stationId = values["station_id"] as? String else { return }
         
         if let cachedStation = DatabaseController.getContext().fetchFirst(entity: BikeStationEntity.self, by: "stationId", value: stationId) {
             updateStation(station: cachedStation, newValues: values)
@@ -44,22 +45,11 @@ class BikeStationCache {
         station.name = newValues["name"] as? String
         station.latitude = newValues["lat"] as! Double
         station.longitude = newValues["lon"] as! Double
-        station.stationId = newValues["station_id"] as? String
+        station.stationId = newValues["station_id"] as! String?
     }
     
     //TODO: Implement delete rule
-    func deleteStation(station : BikeStation) {
+    func deleteStation(station : BikeStationEntity) {
         
-    }
-    
-    fileprivate func stationAlreadyExists(station : BikeStation) -> Bool {
-        
-        guard station.stationId != nil else {
-            return false
-        }
-        
-        let object = DatabaseController.getContext().fetchFirst(entity: BikeStationEntity.self, by: "stationId", value: station.stationId!)
-        
-        return object != nil
     }
 }

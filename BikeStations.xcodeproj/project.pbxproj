@@ -16,7 +16,6 @@
 		BE15F8F91DCB8C5D00272E22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE15F8F81DCB8C5D00272E22 /* Assets.xcassets */; };
 		BE15F8FC1DCB8C5D00272E22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15F8FA1DCB8C5D00272E22 /* LaunchScreen.storyboard */; };
 		BE15F9121DCB8C5D00272E22 /* BikeStationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9111DCB8C5D00272E22 /* BikeStationsUITests.swift */; };
-		BE15F9211DCB8C9D00272E22 /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9201DCB8C9D00272E22 /* BikeStation.swift */; };
 		BE15F9261DCB925800272E22 /* BikeStationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9251DCB925800272E22 /* BikeStationController.swift */; };
 		BE15F92B1DCB97F900272E22 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92A1DCB97F900272E22 /* Constants.swift */; };
 		BE15F92F1DCB9C9E00272E22 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92E1DCB9C9E00272E22 /* Error.swift */; };
@@ -25,7 +24,6 @@
 		BE32B95C1DCBD02800372398 /* BikeStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B95B1DCBD02800372398 /* BikeStationStore.swift */; };
 		BE32B9641DCBDC3A00372398 /* TestBikeStationPersistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9631DCBDC3A00372398 /* TestBikeStationPersistency.swift */; };
 		BE32B9681DCBDD5100372398 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9571DCBC24A00372398 /* DatabaseController.swift */; };
-		BE32B9691DCBE16400372398 /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9201DCB8C9D00272E22 /* BikeStation.swift */; };
 		BE32B96D1DCC07E800372398 /* MapViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B96C1DCC07E800372398 /* MapViewHelper.swift */; };
 		BE32B96F1DCC28FC00372398 /* CalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE32B96E1DCC28FC00372398 /* CalloutView.xib */; };
 		BE8B25E91DFA58B200FFBEC3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B25E81DFA58B200FFBEC3 /* Result.swift */; };
@@ -75,7 +73,6 @@
 		BE15F90D1DCB8C5D00272E22 /* BikeStationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeStationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15F9111DCB8C5D00272E22 /* BikeStationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationsUITests.swift; sourceTree = "<group>"; };
 		BE15F9131DCB8C5D00272E22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE15F9201DCB8C9D00272E22 /* BikeStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeStation.swift; path = Modules/Model/BikeStation.swift; sourceTree = "<group>"; };
 		BE15F9251DCB925800272E22 /* BikeStationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeStationController.swift; path = Modules/Controller/BikeStationController.swift; sourceTree = "<group>"; };
 		BE15F92A1DCB97F900272E22 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BE15F92E1DCB9C9E00272E22 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -211,7 +208,6 @@
 		BE15F9221DCB8CA200272E22 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BE15F9201DCB8C9D00272E22 /* BikeStation.swift */,
 				BE9020861DCD140E00ECD094 /* BikeStationInfo.swift */,
 			);
 			name = Model;
@@ -580,7 +576,6 @@
 				BE32B95C1DCBD02800372398 /* BikeStationStore.swift in Sources */,
 				BE15F8F71DCB8C5D00272E22 /* BikeStations.xcdatamodeld in Sources */,
 				BE9020851DCCF79E00ECD094 /* LoadingView.swift in Sources */,
-				BE15F9211DCB8C9D00272E22 /* BikeStation.swift in Sources */,
 				BE9020831DCCE39E00ECD094 /* MapViewAnnotation.swift in Sources */,
 				BE15F8F11DCB8C5D00272E22 /* MapViewController.swift in Sources */,
 				BE32B9551DCBA4AE00372398 /* CalloutView.swift in Sources */,
@@ -603,7 +598,6 @@
 			files = (
 				BE32B9681DCBDD5100372398 /* DatabaseController.swift in Sources */,
 				BE32B9641DCBDC3A00372398 /* TestBikeStationPersistency.swift in Sources */,
-				BE32B9691DCBE16400372398 /* BikeStation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
