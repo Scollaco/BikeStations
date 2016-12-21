@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 final class MapViewController: UIViewController {
 
@@ -22,22 +23,21 @@ final class MapViewController: UIViewController {
     }
     
     fileprivate func getBikeStations() {
-    
+        
         controller.getBikeStations { result in
             
             switch result {
-            case .success(let stations) : self.addAnottationsOnMap(stations)
+            case .success( _) : self.addAnnotationFromDatabase()
             case .failure(let error) :
                 print(error.localizedDescription)
-                self.addAnnotationFromDatabase()
             }
         }
     }
     
     fileprivate func addAnnotationFromDatabase() {
     
-        let persistedStations = BikeStationEntity.mr_findAll()
-        self.addAnottationsOnMapFromDatabase(persistedStations as! [BikeStationEntity]?)
+        let persistedStations = BikeStationCache.allStations()
+        self.addAnottationsOnMapFromDatabase(persistedStations as [BikeStationEntity]?)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -113,7 +113,7 @@ extension MapViewController : MKMapViewDelegate {
         }
     }
     
-    private func selectedStation(annotation : MapViewAnnotation) -> BikeStation? {
+    private func selectedStation(annotation : MapViewAnnotation) -> BikeStationEntity? {
     
         guard controller.bikeStations.count > 0 else {
         
@@ -123,7 +123,7 @@ extension MapViewController : MKMapViewDelegate {
         }
         
         
-        var bikeStation : BikeStation? = nil
+        var bikeStation : BikeStationEntity? = nil
         
         controller.bikeStations.forEach { (station) in
             if station.latitude == annotation.coordinate.latitude && station.longitude == annotation.coordinate.longitude {

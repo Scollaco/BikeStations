@@ -9,21 +9,13 @@
 import UIKit
 import CoreLocation
 
-protocol Annotable {
-
-    var stationId : String? { get set }
-    var name : String? { get set }
-    var latitude : Double? { get set }
-    var longitude : Double? { get set }
-}
-
 struct BikeStation {
     
     var stationId : String?
     var name : String?
     var latitude : Double?
     var longitude : Double?
-    let store = BikeStationStore()
+    //let store = BikeStationCache()
     
     var coordinate : CLLocationCoordinate2D  {
         get {

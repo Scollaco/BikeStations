@@ -9,13 +9,13 @@
 import UIKit
 import Alamofire
 
-typealias BikeStationsCompletion = (Result<[BikeStation], ErrorType>) -> Void
+typealias BikeStationsCompletion = (Result<[BikeStationEntity], ErrorType>) -> Void
 typealias UniqueStationCompletion = (Result<BikeStationInfo, ErrorType>) -> Void
 
 
 class BikeStationController: NSObject {
     
-    var bikeStations : [BikeStation]! = []
+    var bikeStations : [BikeStationEntity]! = []
     
     func getBikeStations(completion : @escaping BikeStationsCompletion) {
         
@@ -36,13 +36,14 @@ class BikeStationController: NSObject {
                         return
                 }
           
-                self.bikeStations = stations.flatMap({ dictionary  in
+                stations.forEach({ (object) in
                     
-                    let station = BikeStation.init(dictionary: dictionary as! [String : Any])
-                    station.store.saveStationToDataBase(station: station)
-                    return station
+                    let dictionary = object as! [String : Any]
+                    BikeStationCache.saveStationToDataBase(values: dictionary)
                 })
                 
+
+                self.bikeStations = BikeStationCache.allStations()
                 completion(.success(self.bikeStations))
                 
             case .failure(let error):

@@ -21,15 +21,11 @@
 		BE15F92B1DCB97F900272E22 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92A1DCB97F900272E22 /* Constants.swift */; };
 		BE15F92F1DCB9C9E00272E22 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F92E1DCB9C9E00272E22 /* Error.swift */; };
 		BE32B9551DCBA4AE00372398 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9541DCBA4AE00372398 /* CalloutView.swift */; };
-		BE32B9581DCBC24A00372398 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9571DCBC24A00372398 /* PersistencyManager.swift */; };
+		BE32B9581DCBC24A00372398 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9571DCBC24A00372398 /* DatabaseController.swift */; };
 		BE32B95C1DCBD02800372398 /* BikeStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B95B1DCBD02800372398 /* BikeStationStore.swift */; };
-		BE32B9611DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B95F1DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift */; };
 		BE32B9641DCBDC3A00372398 /* TestBikeStationPersistency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9631DCBDC3A00372398 /* TestBikeStationPersistency.swift */; };
-		BE32B9651DCBDCAA00372398 /* BikeStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B95B1DCBD02800372398 /* BikeStationStore.swift */; };
-		BE32B9671DCBDCB700372398 /* BikeStationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B95F1DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift */; };
-		BE32B9681DCBDD5100372398 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9571DCBC24A00372398 /* PersistencyManager.swift */; };
+		BE32B9681DCBDD5100372398 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B9571DCBC24A00372398 /* DatabaseController.swift */; };
 		BE32B9691DCBE16400372398 /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15F9201DCB8C9D00272E22 /* BikeStation.swift */; };
-		BE32B96B1DCBFD8300372398 /* BikeStationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B96A1DCBFD8300372398 /* BikeStationEntity+CoreDataClass.swift */; };
 		BE32B96D1DCC07E800372398 /* MapViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32B96C1DCC07E800372398 /* MapViewHelper.swift */; };
 		BE32B96F1DCC28FC00372398 /* CalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE32B96E1DCC28FC00372398 /* CalloutView.xib */; };
 		BE8B25E91DFA58B200FFBEC3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8B25E81DFA58B200FFBEC3 /* Result.swift */; };
@@ -84,12 +80,10 @@
 		BE15F92A1DCB97F900272E22 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BE15F92E1DCB9C9E00272E22 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		BE32B9541DCBA4AE00372398 /* CalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalloutView.swift; path = Modules/Views/CalloutView.swift; sourceTree = "<group>"; };
-		BE32B9571DCBC24A00372398 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
+		BE32B9571DCBC24A00372398 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		BE32B95B1DCBD02800372398 /* BikeStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeStationStore.swift; path = Modules/Persistence/BikeStationStore.swift; sourceTree = "<group>"; };
-		BE32B95F1DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BikeStationEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE32B9621DCBDC3A00372398 /* BikeStationsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BikeStationsTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		BE32B9631DCBDC3A00372398 /* TestBikeStationPersistency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBikeStationPersistency.swift; sourceTree = "<group>"; };
-		BE32B96A1DCBFD8300372398 /* BikeStationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BikeStationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BE32B96C1DCC07E800372398 /* MapViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewHelper.swift; sourceTree = "<group>"; };
 		BE32B96E1DCC28FC00372398 /* CalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalloutView.xib; path = Modules/Views/CalloutView.xib; sourceTree = "<group>"; };
 		BE8B25E81DFA58B200FFBEC3 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -283,19 +277,9 @@
 		BE32B9591DCBCFCA00372398 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				BE32B95D1DCBD11A00372398 /* Entities */,
 				BE32B95B1DCBD02800372398 /* BikeStationStore.swift */,
 			);
 			name = Persistence;
-			sourceTree = "<group>";
-		};
-		BE32B95D1DCBD11A00372398 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				BE32B96A1DCBFD8300372398 /* BikeStationEntity+CoreDataClass.swift */,
-				BE32B95F1DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift */,
-			);
-			name = Entities;
 			sourceTree = "<group>";
 		};
 		BE8B25EA1DFB4F2D00FFBEC3 /* Network */ = {
@@ -330,7 +314,7 @@
 		BE8B25F11DFB50EC00FFBEC3 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				BE32B9571DCBC24A00372398 /* PersistencyManager.swift */,
+				BE32B9571DCBC24A00372398 /* DatabaseController.swift */,
 			);
 			name = Cache;
 			sourceTree = "<group>";
@@ -594,7 +578,6 @@
 				BE8B25F91DFF14F700FFBEC3 /* UIAlertControllerHelper.swift in Sources */,
 				BE15F92F1DCB9C9E00272E22 /* Error.swift in Sources */,
 				BE32B95C1DCBD02800372398 /* BikeStationStore.swift in Sources */,
-				BE32B96B1DCBFD8300372398 /* BikeStationEntity+CoreDataClass.swift in Sources */,
 				BE15F8F71DCB8C5D00272E22 /* BikeStations.xcdatamodeld in Sources */,
 				BE9020851DCCF79E00ECD094 /* LoadingView.swift in Sources */,
 				BE15F9211DCB8C9D00272E22 /* BikeStation.swift in Sources */,
@@ -605,11 +588,10 @@
 				BE9020871DCD140E00ECD094 /* BikeStationInfo.swift in Sources */,
 				BE15F9261DCB925800272E22 /* BikeStationController.swift in Sources */,
 				BE8B25F61DFCF80B00FFBEC3 /* Parser.swift in Sources */,
-				BE32B9581DCBC24A00372398 /* PersistencyManager.swift in Sources */,
+				BE32B9581DCBC24A00372398 /* DatabaseController.swift in Sources */,
 				BE32B96D1DCC07E800372398 /* MapViewHelper.swift in Sources */,
 				BE15F8EF1DCB8C5D00272E22 /* AppDelegate.swift in Sources */,
 				BE8B25E91DFA58B200FFBEC3 /* Result.swift in Sources */,
-				BE32B9611DCBD16300372398 /* BikeStationEntity+CoreDataProperties.swift in Sources */,
 				BE8B25F31DFB51FA00FFBEC3 /* WebService.swift in Sources */,
 				BE15F92B1DCB97F900272E22 /* Constants.swift in Sources */,
 			);
@@ -619,10 +601,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE32B9681DCBDD5100372398 /* PersistencyManager.swift in Sources */,
+				BE32B9681DCBDD5100372398 /* DatabaseController.swift in Sources */,
 				BE32B9641DCBDC3A00372398 /* TestBikeStationPersistency.swift in Sources */,
-				BE32B9651DCBDCAA00372398 /* BikeStationStore.swift in Sources */,
-				BE32B9671DCBDCB700372398 /* BikeStationEntity+CoreDataProperties.swift in Sources */,
 				BE32B9691DCBE16400372398 /* BikeStation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
