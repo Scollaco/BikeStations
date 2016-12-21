@@ -11,6 +11,7 @@ import Foundation
 enum ErrorType : Error {
     case network(Error)
     case parser
+    case database
     case unknown(String)
     
 }

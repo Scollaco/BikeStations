@@ -13,7 +13,7 @@ class CalloutView: UIViewController {
     
     var parentFrame : CGRect?
     var loadingView : LoadingView?
-    var bikeStation : BikeStation?
+    var bikeStation : BikeStationEntity?
     let controller =  BikeStationController()
     
     @IBOutlet weak var labelName: UILabel! {
@@ -28,7 +28,7 @@ class CalloutView: UIViewController {
     @IBOutlet weak var lastReportLabel: UILabel!
     
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, frame : CGRect, bikeStation : BikeStation) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, frame : CGRect, bikeStation : BikeStationEntity) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.parentFrame = frame
         self.bikeStation = bikeStation

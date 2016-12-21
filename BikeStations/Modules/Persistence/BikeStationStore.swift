@@ -7,57 +7,55 @@
 //
 
 import UIKit
-import MagicalRecord
 import CoreData
 
-class BikeStationStore: NSObject {
-
-    let defaultContext = NSManagedObjectContext.mr_default()
+class BikeStationCache {
     
-    func saveStationToDataBase(station : BikeStation) {
+    private init() {
         
-        guard stationAlreadyExists(station: station) == false else {
-            updateStation(station: station)
-            return
-        }
-        
-            let object = BikeStationEntity.mr_createEntity()
-            object?.name = station.name
-            object?.latitude = station.latitude!
-            object?.longitude = station.longitude!
-            object?.stationId = station.stationId
-        
-            defaultContext.mr_saveToPersistentStoreAndWait()
     }
     
+    class func allStations() -> [BikeStationEntity] {
+        
+        let stations = DatabaseController.getContext().fetchAll(entity: BikeStationEntity.self)
+        return stations
+    }
+    
+    class func saveStationToDataBase(values : [String : Any]) {
+        
+        if let cachedStation = DatabaseController.getContext().fetchFirst(entity: BikeStationEntity.self, by: "stationId", value: values["station_id"] as! String) {
+            updateStation(station: cachedStation, newValues: values)
+            
+        } else {
+            
+            let newStation = DatabaseController.getContext().insert(entity: BikeStationEntity.self)
+            updateStation(station: newStation, newValues: values)
+        }
+        
+        DatabaseController.saveContext()
+    }
+    
+    private class func updateStation(station : BikeStationEntity, newValues: [String : Any]) {
+        
+        station.name = newValues["name"] as! String?
+        station.latitude = newValues["lat"] as! Double
+        station.longitude = newValues["lon"] as! Double
+        station.stationId = newValues["station_id"] as! String?
+    }
+    
+    //TODO: Implement delete rule
     func deleteStation(station : BikeStation) {
-
-        guard station.stationId != nil else {
-            return
-        }
         
-        let object = BikeStationEntity.mr_findFirst(byAttribute: "stationId", withValue: station.stationId!)
-        object?.mr_deleteEntity(in: defaultContext)
-    }
-    
-    fileprivate func updateStation(station : BikeStation) {
-    
-            let object = BikeStationEntity.mr_findFirst(byAttribute: "stationId", withValue: station.stationId!)
-            object?.name = station.name
-            object?.latitude = station.latitude!
-            object?.longitude = station.longitude!
-            object?.stationId = station.stationId
-        
-            defaultContext.mr_saveToPersistentStoreAndWait()
     }
     
     fileprivate func stationAlreadyExists(station : BikeStation) -> Bool {
-    
+        
         guard station.stationId != nil else {
             return false
         }
         
-        let persistedObj = BikeStationEntity.mr_findFirst(byAttribute: "stationId", withValue: station.stationId!)
-        return persistedObj != nil
+        let object = DatabaseController.getContext().fetchFirst(entity: BikeStationEntity.self, by: "stationId", value: station.stationId!)
+        
+        return object != nil
     }
 }
