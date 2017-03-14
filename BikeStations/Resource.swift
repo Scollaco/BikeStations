@@ -8,8 +8,6 @@
 
 import Foundation
 
-public typealias Headers = [String: String]
-
 public struct Resource {
     
     public let path: String

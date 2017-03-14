@@ -27,7 +27,7 @@ final class MapViewController: UIViewController {
         controller.getBikeStations { [unowned self] result in
             
             switch result {
-            case .success( _) : break 
+            case .success( _) : break
             case .failure(let error) :
                 print(error.localizedDescription)
             }
