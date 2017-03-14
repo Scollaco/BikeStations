@@ -31,7 +31,7 @@ class BikeStationController: NSObject {
                        let jsonData = jsonResult!["data"] as? [String : Any],
                        let stations = jsonData["stations"] as? [Any] else {
                 
-                        completion(.failure(.unknown("Some error occurred.")))
+                        completion(.failure(.invalidJsonFormat))
                         return
                 }
           
@@ -66,7 +66,7 @@ class BikeStationController: NSObject {
                     let jsonData = jsonResult!["data"] as? [String : Any],
                     let stations = jsonData["stations"] as? [[String : Any]] else {
                         
-                        completion(.failure(.unknown("Some error occurred.")))
+                        completion(.failure(.invalidJsonFormat))
                         return
                 }
                 
@@ -76,7 +76,7 @@ class BikeStationController: NSObject {
                 
                 guard bikeStationDic != nil else {
                 
-                    completion(.failure(.unknown("No station with id \(stationId) found!")))
+                    completion(.failure(.invalidJsonFormat))
                     return
                 }
                 
